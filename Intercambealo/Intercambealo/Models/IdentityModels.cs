@@ -13,5 +13,7 @@ namespace Intercambealo.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<Intercambealo.Models.ProductosModels> ProductosModels { get; set; }
     }
 }
