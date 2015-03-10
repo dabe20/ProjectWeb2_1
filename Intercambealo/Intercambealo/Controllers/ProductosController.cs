@@ -21,7 +21,8 @@ namespace Intercambealo.Controllers
             return View(await db.ProductosModels.ToListAsync());
         }
 
-        // GET: /Productos/Details/5
+        // GET: /Productos/Details-5
+        [Route("ProductDetails-{id}")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,7 +48,7 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include="Id,Producto,Descripcion,cedula,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
+        public async Task<ActionResult> Create([Bind(Include="Id,Nombre,Descripcion,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include="Id,Producto,Descripcion,cedula,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
+        public async Task<ActionResult> Edit([Bind(Include="Id,Nombre,Descripcion,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
         {
             if (ModelState.IsValid)
             {
