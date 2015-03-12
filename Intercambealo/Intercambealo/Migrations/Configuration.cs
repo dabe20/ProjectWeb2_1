@@ -10,6 +10,7 @@ namespace Intercambealo.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Intercambealo.Models.ApplicationDbContext";
         }
 

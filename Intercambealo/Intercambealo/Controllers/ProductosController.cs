@@ -21,7 +21,7 @@ namespace Intercambealo.Controllers
             return View(await db.ProductosModels.ToListAsync());
         }
 
-        // GET: /Productos/Details-5
+        // GET: /ProductDetails-5
         [Route("ProductDetails-{id}")]
         public async Task<ActionResult> Details(int? id)
         {
