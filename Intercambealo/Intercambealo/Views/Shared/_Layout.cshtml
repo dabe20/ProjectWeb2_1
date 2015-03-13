@@ -19,12 +19,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Intercambealo", "Principal", "Public", null, new { @class = "navbar-brand" })
+                @Html.Partial("_Admin")
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Productos", "Index", "Productos")</li>
-                    <li>@Html.ActionLink("Transaciones", "Index", "Transacciones")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

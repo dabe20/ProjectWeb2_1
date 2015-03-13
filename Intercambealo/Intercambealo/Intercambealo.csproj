@@ -222,6 +222,7 @@
     <Content Include="Views\Productos\Index.cshtml" />
     <Content Include="Views\Public\Principal.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Shared\_Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
