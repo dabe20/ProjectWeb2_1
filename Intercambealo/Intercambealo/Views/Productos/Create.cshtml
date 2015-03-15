@@ -43,7 +43,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Estado, new { @class = "control-label col-md-2" })        
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Estado)
+                @*@Html.EditorFor(model => model.Estado)*@
+                @Html.DropDownListFor(model => model.Estado, new MultiSelectList(new [] {"Activo", "Inactivo", "En transacción", "Cambiado"}))
                 @Html.ValidationMessageFor(model => model.Estado)
             </div>
         </div>
