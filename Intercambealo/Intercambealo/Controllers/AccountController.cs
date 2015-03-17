@@ -83,7 +83,7 @@ namespace Intercambealo.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Users");
+                    return RedirectToAction("_Layout", "Shared");
                 }
                 else
                 {

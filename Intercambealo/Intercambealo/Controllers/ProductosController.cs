@@ -80,7 +80,7 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include="Id,Nombre,Descripcion,Foto,Estado")] ProductosModels productosmodels)
+        public async Task<ActionResult> Edit([Bind(Include="Id,Nombre,Descripcion,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
         {
             if (ModelState.IsValid)
             {
