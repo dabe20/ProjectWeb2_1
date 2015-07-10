@@ -32,13 +32,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Foto, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Foto)
-                @Html.ValidationMessageFor(model => model.Foto)
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Estado, new { @class = "control-label col-md-2" })        
@@ -48,15 +41,16 @@
                 @Html.ValidationMessageFor(model => model.Estado)
             </div>
         </div>
+        
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.FechaRegistro, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FechaRegistro)
-                @*<input id="FechaRegistro" type="date"/>*@
+                <input id="FechaRegistro" type="date"/>
                 @Html.ValidationMessageFor(model => model.FechaRegistro)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

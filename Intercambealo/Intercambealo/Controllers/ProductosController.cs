@@ -48,8 +48,9 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include="Id,Nombre,Descripcion,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
+        public async Task<ActionResult> Create([Bind(Include="Id,Nombre,Descripcion,Estado,FechaRegistro")] ProductosModels productosmodels)
         {
+            productosmodels.FechaRegistro = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.ProductosModels.Add(productosmodels);
@@ -80,10 +81,11 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include="Id,Nombre,Descripcion,Foto,Estado,FechaRegistro")] ProductosModels productosmodels)
+        public async Task<ActionResult> Edit([Bind(Include="Id,Nombre,Descripcion,Estado,FechaRegistro")] ProductosModels productosmodels)
         {
             if (ModelState.IsValid)
             {
+                productosmodels.FechaRegistro = DateTime.Now;
                 db.Entry(productosmodels).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
