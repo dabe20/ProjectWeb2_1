@@ -12,5 +12,8 @@ namespace Intercambealo.Models
         public string Descripcion { get; set; }
         public string Estado { get; set; }
         public DateTime FechaRegistro { get; set; }
+        public virtual ICollection<File> Files { get; set; }
+
+
     }
 }

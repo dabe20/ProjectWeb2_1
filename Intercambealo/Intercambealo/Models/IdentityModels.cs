@@ -15,5 +15,6 @@ namespace Intercambealo.Models
         }
 
         public System.Data.Entity.DbSet<Intercambealo.Models.ProductosModels> ProductosModels { get; set; }
+        public System.Data.Entity.DbSet<Intercambealo.Models.File> Files { get; set; }
     }
 }

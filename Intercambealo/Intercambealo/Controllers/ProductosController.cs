@@ -29,7 +29,8 @@ namespace Intercambealo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductosModels productosmodels = await db.ProductosModels.FindAsync(id);
+            ProductosModels productosmodels = db.ProductosModels.Include(p => p.Files).SingleOrDefault(p => p.Id == id);
+            //ProductosModels productosmodels = await db.ProductosModels.FindAsync(id);
             if (productosmodels == null)
             {
                 return HttpNotFound();
@@ -48,11 +49,25 @@ namespace Intercambealo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include="Id,Nombre,Descripcion,Estado,FechaRegistro")] ProductosModels productosmodels)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Descripcion,Estado,FechaRegistro")] ProductosModels productosmodels, HttpPostedFileBase upload)
         {
             productosmodels.FechaRegistro = DateTime.Now;
             if (ModelState.IsValid)
             {
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    var avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.Avatar,
+                        ContentType = upload.ContentType
+                    };
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
+                    productosmodels.Files = new List<File> { avatar };
+                }
                 db.ProductosModels.Add(productosmodels);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

@@ -146,3 +146,5 @@ C:\Users\DABE\Documents\GitHub\ProjectWeb2_1\Intercambealo\Intercambealo\bin\es\
 C:\Users\DABE\Documents\GitHub\ProjectWeb2_1\Intercambealo\Intercambealo\obj\Debug\Intercambealo.csprojResolveAssemblyReference.cache
 C:\Users\DABE\Documents\GitHub\ProjectWeb2_1\Intercambealo\Intercambealo\obj\Debug\Intercambealo.dll
 C:\Users\DABE\Documents\GitHub\ProjectWeb2_1\Intercambealo\Intercambealo\obj\Debug\Intercambealo.pdb
+C:\Users\DABE\Documents\Visual Studio 2013\Projects\Intercambealo\Intercambealo\obj\Debug\Intercambealo.Migrations.Files.resources
+C:\Users\DABE\Documents\Visual Studio 2013\Projects\Intercambealo\Intercambealo\obj\Debug\Intercambealo.csproj.GenerateResource.Cache
